@@ -26,17 +26,17 @@ header{
 #canvas{
     grid-area: 2 / 1 / 3 / 3;
     display: grid;
+    background-color: aqua;
+    width: 100%;
+}
+#canvas1{
+    grid-area: 2 / 3 / 3 / 4;
     grid-template-columns: repeat(25, 1fr);
     grid-template-columns: repeat(autofill, minmax(40px, 1fr));
     grid-template-columns: repeat(autofit, minmax(40px, 1fr));
     grid-template-rows: repeat(25, 1fr);
     grid-template-rows: repeat(autofill, minmax(40px, 1fr));
     grid-template-rows: repeat(autofit, minmax(40px, 1fr));
-    width: 100%;
-    background-color: #fff;
-}
-#canvas1{
-    grid-area: 2 / 3 / 3 / 4;
     width: 100%;
     background-color: blue;
 }
