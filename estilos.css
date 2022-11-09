@@ -41,27 +41,3 @@ header{
     width: 100%;
     background-color: blue;
 }
-.s1{
-    fill: blueviolet;
-}
-.s2:hover{
-    transform: rotate(90deg);
-}
-.s2{
-    fill: red;
-}
-.s3{
-    fill: yellow;
-}
-.s4{
-    fill: green;
-}
-.s5{
-    fill: goldenrod;
-}
-.s6{
-    fill: orange;
-}
-.s7{
-    fill: blue;
-}
