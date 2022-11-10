@@ -2,16 +2,21 @@
     box-sizing: border-box;
     margin:0;
     padding: 0;
+    width: 100%;
+}
+html{
+    width: 100%;
+    height:100vh;
 }
 body{
-    margin: 10px;
-    padding: 0;
+    margin: 0px;
+    padding: 50px;
     background-color: #000;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-columns: repeat(autofill, minmax(90px, 1fr));
     grid-template-columns: repeat(autofit, minmax(90px, 1fr));
-    grid-template-rows: repeat(2, auto);
+    grid-template-rows: repeat( 2, auto);
     grid-template-rows: repeat(autofill, minmax(480px, 1fr));
     grid-template-rows: repeat(autofit, minmax(480px, 1fr));
     column-gap: 0.5rem;
@@ -24,7 +29,7 @@ header{
     text-align: center;
 }
 #canvas{
-    grid-area: 2 / 1 / 3 / 4;
+    grid-area: 2 / 1 / -2 / 4;
     display: grid;
     grid-template-columns: repeat(25, 1fr);
     grid-template-columns: repeat(autofill, minmax(20px, 1fr));
@@ -34,10 +39,11 @@ header{
     grid-template-rows: repeat(autofit, minmax(20px, 1fr));
     background-color: #252850;
     width: 100%;
-    height: 80vh;
+    height: 100%;
 }
-#canvas1{
+.pto{
     grid-area: 2 / 4 / 3 / 5;
     width: 100%;
-    background-color: blue;
+    height: 100%;
+    background-color: aquamarine;
 }
