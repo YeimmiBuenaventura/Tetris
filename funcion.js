@@ -22,16 +22,26 @@ for (var j = 0; j <= canvas.height; j+=15){//Se implementa un ciclo for en el cu
 //Trayendo figuras sobre el tablero: se indica una variable global a la cual se le brinda un nombre especifico de c/u de las figuras, indicando que es un nuevo Path2D el cual nos permite traer trazos realizados en svg a js como objeto
 var square = new Path2D('M 0 0 L 15 0 V 15 15 L 0 15'); 
 ctx.fill() //Rellena la forma del contexto adjudicado
+ctx.fillStyle = 'blue';
+var square = new Path2D('M 0 0 L 15 0 V 15 15 L 0 15 '); 
+ctx.fill(square); //Rellena la forma del contexto adjudicado
+ctx.fillStyle = 'red';
 var el = new Path2D('M 0 0 L 15 0 V 15 30 L 30 30 V 30 45 L 0 45');
 ctx.fill();
+ctx.fillStyle = 'purple';
 var barra = new Path2D('M 0 0 L 15 0 L 15 60 L 0 60'); 
 ctx.fill(barra);
+ctx.fill();
+ctx.fillStyle = 'green';
 var zeta = new Path2D('M 0 0 L 30 0 V 30 15 L 45 15 V 45 30 L 15 30 V 15 15 L 0 15');
 ctx.fill();
+ctx.fillStyle = 'orange';
 var poli = new Path2D('M 0 0 L 45 0 L 45 15 L 30 15 V 30 30 L 15 30 L 15 15 L 0 15');
 ctx.fill();
+ctx.fillStyle = 'yellow';
 var ese = new Path2D('M 15 0 L 45 0 L 45 15 L 30 15 L 30 30 L 0 30 L 0 15 L 15 15');
 ctx.fill();
+ctx.fillStyle = 'white';
 var jota = new Path2D('M 15 0 L 30 0 L 30 45 L 0 45 L 0 30 L 15 30');
 ctx.fill();
 
