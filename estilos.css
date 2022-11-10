@@ -3,33 +3,36 @@
     margin:0;
     padding: 0;
     width: 100%;
+    overflow-x: hidden;
 }
 html{
     width: 100%;
-    height:100vh;
+    height:100%;
 }
 body{
     margin: 0px;
-    padding: 50px;
-    background-color: #000;
+    padding: 20px;
+    background-color: #272727;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-columns: repeat(autofill, minmax(90px, 1fr));
     grid-template-columns: repeat(autofit, minmax(90px, 1fr));
-    grid-template-rows: repeat( 2, auto);
-    grid-template-rows: repeat(autofill, minmax(480px, 1fr));
-    grid-template-rows: repeat(autofit, minmax(480px, 1fr));
+    grid-template-rows: repeat( 4, 1fr);
+    grid-template-rows: repeat(autofill, minmax(100px, 1fr));
+    grid-template-rows: repeat(autofit, minmax(100px, 1fr));
     column-gap: 0.5rem;
     row-gap: 0.5rem;
+    min-height: 100%;
 }
 header{
     grid-area: 1 / 1 / 2 / 5;
     background-color: blueviolet;
     font-size:  0.7rem;
     text-align: center;
+    
 }
 #canvas{
-    grid-area: 2 / 1 / -2 / 4;
+    grid-area: 2 / 1 / -1 / 4;
     display: grid;
     grid-template-columns: repeat(25, 1fr);
     grid-template-columns: repeat(autofill, minmax(20px, 1fr));
@@ -42,8 +45,51 @@ header{
     height: 100%;
 }
 .pto{
-    grid-area: 2 / 4 / 3 / 5;
+    grid-area: 2 / 4 / -1 / 5;
     width: 100%;
     height: 100%;
     background-color: aquamarine;
 }
+@media only screen and (max-width: 1024px) {
+    body {
+        margin: 0px;
+        padding: 5px;
+        background-color: #272727;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(autofill, minmax(90px, 1fr));
+        grid-template-columns: repeat(autofit, minmax(90px, 1fr));
+        grid-template-rows: repeat( 6, 1fr);
+        grid-template-rows: repeat(autofill, minmax(100px, 1fr));
+        grid-template-rows: repeat(autofit, minmax(100px, 1fr));
+        column-gap: 1 rem;
+        row-gap: 1 rem;
+        min-height: 100%;
+    }
+    header{
+        grid-area: 1 / 1 / 2 / 5;
+        background-color: blueviolet;
+        font-size:  0.7rem;
+        text-align: center;
+    }
+    #canvas{
+        grid-area: 2 / 1 / 6 / 5;
+        display: grid;
+        grid-template-columns: repeat(25, 1fr);
+        grid-template-columns: repeat(autofill, minmax(20px, 1fr));
+        grid-template-columns: repeat(autofit, minmax(20px, 1fr));
+        grid-template-rows: repeat(25, 1fr);
+        grid-template-rows: repeat(autofill, minmax(20px, 1fr));
+        grid-template-rows: repeat(autofit, minmax(20px, 1fr));
+        background-color: #252850;
+        width: 100%;
+        height: 100%;
+    }
+    .pto{
+        grid-area: 6 / 1 / 7 / 5;
+        width: 100%;
+        height: 100%;
+        background-color: aquamarine;
+    }
+}
+  
