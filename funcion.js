@@ -33,8 +33,25 @@ ctx.fill();
 var ese = new Path2D('M 15 0 L 45 0 L 45 15 L 30 15 L 30 30 L 0 30 L 0 15 L 15 15');
 ctx.fill();
 var jota = new Path2D('M 15 0 L 30 0 L 30 45 L 0 45 L 0 30 L 15 30');
-ctx.fill(jota);
+ctx.fill();
 
+// const duracionCaida = 1.5
+
+// const crearCaida = (elem, steps, delay) => TweenLite.to(elem, duracionCaida, {
+//   y: '0%',
+//   ease: SteppedEase.config(steps),
+//   delay,
+// });
+
+
+// // const squareDrop = createDrop(square, 10, 0.5)
+// const squareCaida = crearCaida(square, 10);
+// const eleCaida = crearCaida(el, 10);
+// const barraCaida = crearCaida(barra, 9);
+// const zetaCaida = crearCaida(zeta, 8);
+// const poliCaida = crearCaida(poli, 9);
+// const eseCaida = crearCaida(ese, 7);
+// const jotaCaida = crearCaida(jota, 7);
 
 
 
