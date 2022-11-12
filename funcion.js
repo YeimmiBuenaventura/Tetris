@@ -20,8 +20,9 @@ for (var j = 0; j <= canvas.height; j+=15){//Se implementa un ciclo for en el cu
 }      
 }
 //Trayendo figuras sobre el tablero: se indica una variable global a la cual se le brinda un nombre especifico de c/u de las figuras, indicando que es un nuevo Path2D el cual nos permite traer trazos realizados en svg a js como objeto
+
 ctx.fillStyle = 'blue';
-var square = new Path2D('M 0 0 L 15 0 V 15 15 L 0 15 '); 
+var square = new Path2D('M 0 0 L 30 0 V 30 30 L 0 30 '); 
 ctx.fill(square); //Rellena la forma del contexto adjudicado
 ctx.fillStyle = 'red';
 var el = new Path2D('M 0 0 L 15 0 V 15 30 L 30 30 V 30 45 L 0 45');
@@ -42,22 +43,47 @@ ctx.fillStyle = 'white';
 var jota = new Path2D('M 15 0 L 30 0 L 30 45 L 0 45 L 0 30 L 15 30');
 ctx.fill();
 
-const duracionCaida = 1.5
+switch(square){
+  case Path2D('M 0 0 L 30 0 V 30 30 L 0 30 '):
+    square.ctx.translate(0,-15);
+  case Path2D('M 0 0 L 30 0 V 30 30 L 0 30 '):
+    ctx.translate(0,0);
+  case Path2D('M 0 0 L 30 0 V 30 30 L 0 30 '):
+    ctx.translate(0,15);
+  case square:
+    ctx.translate(0,30);
+}
 
-const crearCaida = (elem, steps, delay) => TweenLite.to(elem, duracionCaida, {
-  y: '0%',
-  ease: SteppedEase.config(steps),
-  delay,
-});
+// const duracionCaida = 1.5;
+
+// if(duracionCaida == true){
+//   for(square.ctx.translate(0,-15);square.ctx.translate(0,-15)<square.ctx.translate(0,90);square.ctx.translate(0,-15++)){
+    
+//   }  
+// }
+
+// let figuras =[
+//   square,
+//   el,
+//   barra,
+//   zeta,
+//   poli,
+//   ese,
+//   jota
+// ];
+
+// function aleatorio(){
+//   let aleat = Math.floor(Math.random() * figuras.length)
+//   return new Path2D(figuras[aleat][0], figuras[aleat][1])
+// }
+//aleatorio();
 
 
-const squareCaida = crearCaida(square, 10);
-const eleCaida = crearCaida(el, 10);
-const barraCaida = crearCaida(barra, 9);
-const zetaCaida = crearCaida(zeta, 8);
-const poliCaida = crearCaida(poli, 9);
-const eseCaida = crearCaida(ese, 7);
-const jotaCaida = crearCaida(jota, 7);
+
+
+
+
+
 
 
 
