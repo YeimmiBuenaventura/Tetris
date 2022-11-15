@@ -21,12 +21,15 @@ for (var j = 0; j <= canvas.height; j+=10){//Se implementa un ciclo for en el cu
     ctx.lineTo(ctx.canvas.width, j);  //Se indica que dibuje a lo ancho del contexto una linea en cada una de las posiciones que tome j hasta llegar al limite del tablero
     ctx.stroke(); //Esta función trazara las lineas
     ctx.closePath();
-}      
+} 
+
+setInterval(square, 10);
 }
 //Trayendo figuras sobre el tablero: se indica una variable global a la cual se le brinda un nombre especifico de c/u de las figuras, indicando que es un nuevo Path2D el cual nos permite traer trazos realizados en svg a js como objeto
 //https://www.tutorialesprogramacionya.com/pythonya/detalleconcepto.php?punto=78&codigo=78&inicio=75
 //https://www.tutorialesprogramacionya.com/pythonya/detalleconcepto.php?punto=76&codigo=76&inicio=75
-
+var direccion = 0;
+var dx = 0;
 function square()
 {
     ctx.beginPath();
@@ -142,5 +145,6 @@ function jota()
     y += 10;
 }
 //var jota = new Path2D('M 15 0 L 30 0 L 30 45 L 0 45 L 0 30 L 15 30');
-setInterval(square, 10);
 
+
+square();
