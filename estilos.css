@@ -7,7 +7,7 @@
 }
 html{
     width: 100%;
-    height:100%;
+    height:100vh;
 }
 body{
     margin: 0px;
@@ -26,7 +26,7 @@ body{
 }
 header{
     grid-area: 1 / 1 / 2 / 5;
-    background-color: blueviolet;
+    background-color: #272727;
     font-size:  0.7rem;
     text-align: center;
     
@@ -37,18 +37,20 @@ header{
     grid-template-columns: repeat(25, 1fr);
     grid-template-columns: repeat(autofill, minmax(20px, 1fr));
     grid-template-columns: repeat(autofit, minmax(20px, 1fr));
-    grid-template-rows: repeat(25, 1fr);
-    grid-template-rows: repeat(autofill, minmax(20px, 1fr));
-    grid-template-rows: repeat(autofit, minmax(20px, 1fr));
+    grid-template-rows: repeat(30, 1fr);
+    grid-template-rows: repeat(autofill, minmax(40px, 1fr));
+    grid-template-rows: repeat(autofit, minmax(40px, 1fr));
     background-color: #252850;
     width: 100%;
-    height: 100%;
+    height: 100vh;
+    
 }
 .pto{
     grid-area: 2 / 4 / -1 / 5;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-color: aquamarine;
+   
 }
 @media only screen and (max-width: 1024px) {
     body {
@@ -82,8 +84,8 @@ header{
         grid-template-rows: repeat(autofill, minmax(20px, 1fr));
         grid-template-rows: repeat(autofit, minmax(20px, 1fr));
         background-color: #252850;
-        width: 100%;
-        height: 100%;
+        width: 100vh;
+        height: 100vh
     }
     .pto{
         grid-area: 6 / 1 / 7 / 5;
