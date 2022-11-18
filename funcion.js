@@ -36,11 +36,7 @@ function paint(){
 // Función que crea la pieza L
 function squareDraw()
 {
-    
     ctx.beginPath();//Se inicializa el comienzo del dibujo
-    // ctx.translate(x+5, y+15);
-    // ctx.rotate(45*Math.PI / 180);
-    // ctx.translate(-x-5, -y-15);
     ctx.fillStyle='white';//Se indica el color que tendra el tetromino o pieza L
     ctx.fillRect(x,y,10,10);//Se dibuja un rectangulo, teniendo en cuenta que los dos primeros valores indican la coordenada en donde se empieza a dibujar la figura, valores antes preestablecidos en las variables x, y_1
     ctx.fillRect(x,y_1,30,10);//Se dibuja un rectangulo, teniendo en cuenta que los dos primeros valores indican la coordenada en donde se empieza a dibujar la figura, valores antes preestablecidos en las variables x_1, y
