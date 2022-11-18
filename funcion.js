@@ -3,8 +3,8 @@ const ctx = canvas.getContext("2d"); // Creamos una variable a la cual se le adj
 var x = canvas.width/2; //Variable que data la mitad del ancho 
 var y = canvas.height-150; // Variable que data la altura de caida de las piezas y
 var x_1 = (canvas.width/2) +10;//Variable que data la ubicación de la pieza en mitad del ancho de la pantalla más 10 px
-var y_1 = canvas.height-140;//Variable que data la altura de la caida de las piezas y_1
-var y_2 = canvas.height -140;//Variable que data la altura de la caida de las piezas y_2
+var y_1 = canvas.height-130;//Variable que data la altura de la caida de las piezas y_1
+var y_2 = canvas.height-140;//Variable que data la altura de la caida de las piezas y_2
 var dx = 0; //Variable que indica la cantidad de espacio que se movera la ficha hacia la X
 var dy = 1; //Varible que indica la "Velocidad con la que baja la pieza por el eje y"
 var up=38;
@@ -33,38 +33,83 @@ function paint(){
             ctx.closePath();
 }}}
 
-// Función que crea la pieza L
-function squareDraw()
-{
+// Función que crea la pieza j
+function jDraw(){
     ctx.beginPath();//Se inicializa el comienzo del dibujo
     ctx.fillStyle='white';//Se indica el color que tendra el tetromino o pieza L
-    ctx.fillRect(x,y,10,10);//Se dibuja un rectangulo, teniendo en cuenta que los dos primeros valores indican la coordenada en donde se empieza a dibujar la figura, valores antes preestablecidos en las variables x, y_1
-    ctx.fillRect(x,y_1,30,10);//Se dibuja un rectangulo, teniendo en cuenta que los dos primeros valores indican la coordenada en donde se empieza a dibujar la figura, valores antes preestablecidos en las variables x_1, y
+    ctx.fillRect(x,y_1,10,10);//Se dibuja un rectangulo, teniendo en cuenta que los dos primeros valores indican la coordenada en donde se empieza a dibujar la figura, valores antes preestablecidos en las variables x, y_1
+    ctx.fillRect(x_1,y,10,30);//Se dibuja un rectangulo, teniendo en cuenta que los dos primeros valores indican la coordenada en donde se empieza a dibujar la figura, valores antes preestablecidos en las variables x_1, y
     ctx.fill();
 }
+
+function squareDraw(){
+    ctx.fillStyle='blue';
+    ctx.beginPath();
+    ctx.fillRect(x,y,20,20);
+    ctx.fill(); 
+}
+ function lDraw(){
+    ctx.fillStyle='red';
+    ctx.beginPath();
+    ctx.fillRect(x,y,10,30);
+    ctx.fillRect(x_1,y_1,10,10);
+    ctx.fill();
+}
+
+function iDraw(){
+    ctx.fillStyle='purple';
+    ctx.beginPath();
+    ctx.fillRect(x,y,10,40);
+    ctx.fill();
+} 
+
+function zDraw(){
+    ctx.fillStyle='green';
+    ctx.beginPath();
+    ctx.fillRect(x,y,20,10);
+    ctx.fillRect(x_1,y_2,20,10);
+    ctx.fill();
+}
+ 
+function tDraw(){
+    ctx.fillStyle='orange';
+    ctx.beginPath();
+    ctx.fillRect(x,y,30,10);
+    ctx.fillRect(x_1,y_2,10,10);
+    ctx.fill();
+}
+
+function sDraw(){
+    ctx.fillStyle='yellow';
+    ctx.beginPath();
+    ctx.fillRect(x,y_2,20,10);
+    ctx.fillRect(x_1,y,20,10);
+    ctx.fill();
+}        
+
 
 //Función para brindar movimiento de caida a la pieza cuadrado
 function square()
 {
     ctx.clearRect(0, 0, canvas.width, canvas.height); //Indicamos al canva que limpie los fotogramas "Recuerda que el movimiento generado esta dado por una serie de duplicados de la pieza que dejaran marcas de color"
-    squareDraw(); //Llamamos la pieza a dibujar
+    lDraw(); //Llamamos la pieza a dibujar
     //MOVIMIENTO CON TECLAS 
     if(pressing[up])//Si se presiona la flecha para arriba
-    [squareDraw(),ctx.translate(x+5, y+15),/*Se llama a la figura donde se crea una matriz para que su punto de giro sea en el centro de la figura
+    [ctx.translate(x+15, y+25),/*Se llama a la figura donde se crea una matriz para que su punto de giro sea en el centro de la figura
     tendra punto de inicio de giro en la esquina inferior izquierda*/
-        ctx.rotate(45*Math.PI / 360),//La figura rotara 45 grados multiplicados por el radio del circulo y dividido en 180 grados
-        ctx.translate(-x-5, -y-15),dx=1,dy=0];//Es necesario cerrar la matriz para que la figura gire para el opuesto de su centro 
+    ctx.rotate(90*Math.PI/360),//La figura rotara 45 grados multiplicados por el radio del circulo y dividido en 180 grados
+    ctx.translate(-x-15, -y-25),dx=0,dy=0];//Es necesario cerrar la matriz para que la figura gire para el opuesto de su centro 
     if(pressing[right]) //Si se presiona la flecha para la derecha
     [x+=10, x_1+=10]; //La figura se movera hacia la derecha con espacios de 10
     if(pressing[down]) //Si se presiona la flecha para abajo
     [y+=10,y_1+=10, y_2+=10];//La figura se movera hacia abajo con espacios de 10
     if(pressing[left]) //Si se presiona la flecha a la izquierda
     [x-=10, x_1-=10]; //La figura se movera hacia la izquierda con espacios de 10
-    if(x > canvas.width - 30 || x_1 > canvas.width - 10){ //Si x o x_1(eje horizontal) es mayor que el ancho del canvas -10(Se adjudica este valor para simular el espacio de la figura)
-      [x=canvas.width-30, x_1=canvas.width-10]; //Esto nos permite que el fotograma quede estatico al llegar al final del ancho del canvas
+    if(x > canvas.width - 10 || x_1 > canvas.width - 10){ //Si x o x_1(eje horizontal) es mayor que el ancho del canvas -10(Se adjudica este valor para simular el espacio de la figura)
+      [x=canvas.width-20, x_1=canvas.width-10]; //Esto nos permite que el fotograma quede estatico al llegar al final del ancho del canvas
     }
     if(y > canvas.height - 10 || y_1 > canvas.height - 10 || y_2 > canvas.height - 10){//Si y o y_1 o y_2 (eje vertical) se pasa del alto del canvas respectivamente (Se adjudica este valor para simular el espacio de la figura) la figura se detendra
-    [y=canvas.height-20, y_1=canvas.height-10,y_2=canvas.height-10]; ////Esto nos permite que el fotograma quede estatico al llegar al final del alto del canvas
+    [y=canvas.height-30, y_1=canvas.height-10,y_2=canvas.height-10]; ////Esto nos permite que el fotograma quede estatico al llegar al final del alto del canvas
     }
     //Nos permite delimitar el canvas hacia los lados 
     if(x<0 || x_1<0)
