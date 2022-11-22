@@ -7,7 +7,7 @@ var y_1 = canvas.height-130;//Variable que data la altura de la caida de las pie
 var y_2 = canvas.height-140;//Variable que data la altura de la caida de las piezas y_2
 var dx = 0; //Variable que indica la cantidad de espacio que se movera la ficha hacia la X
 var dy = 1; //Varible que indica la "Velocidad con la que baja la pieza por el eje y"
-var up=38;
+var up=38;//Variable adjudicada a la tecla que hace girar las fichas
 var left = 37; //Variable adjudicada a la tecla que corre hacia la derecha
 var right = 39; //Variable adjudicada a la tecla que corre hacia la izquierda
 var down = 40; //Variable adjudicada a la tecla que corre hacia abajo
@@ -33,57 +33,67 @@ function paint(){
             ctx.closePath();
 }}}
 
+
 // Función que crea la pieza j
-function jDraw(){
+
+function jDraw(j){
     ctx.beginPath();//Se inicializa el comienzo del dibujo
-    ctx.fillStyle='white';//Se indica el color que tendra el tetromino o pieza L
+    ctx.fillStyle='white';//Se indica el color que tendra el tetromino o pieza j
     ctx.fillRect(x,y_1,10,10);//Se dibuja un rectangulo, teniendo en cuenta que los dos primeros valores indican la coordenada en donde se empieza a dibujar la figura, valores antes preestablecidos en las variables x, y_1
     ctx.fillRect(x_1,y,10,30);//Se dibuja un rectangulo, teniendo en cuenta que los dos primeros valores indican la coordenada en donde se empieza a dibujar la figura, valores antes preestablecidos en las variables x_1, y
+    ctx.closePath();//Se cierra el dibujo de la figura
     ctx.fill();
+    j=0;
 }
 
-function squareDraw(){
-    ctx.fillStyle='blue';
-    ctx.beginPath();
-    ctx.fillRect(x,y,20,20);
+function squareDraw(o){
+    ctx.fillStyle='blue';//Se indica el color que tendra el tetromino o pieza cuadrado
+    ctx.beginPath();//Se inicializa el comienzo del dibujo
+    ctx.fillRect(x,y,20,20);//Se dibuja un rectangulo, teniendo en cuenta que los dos primeros valores indican la coordenada en donde se empieza a dibujar la figura, valores antes preestablecidos en las variables x, y
+    ctx.closePath();//Se cierra el dibujo de la figura
     ctx.fill(); 
 }
  function lDraw(){
-    ctx.fillStyle='red';
-    ctx.beginPath();
-    ctx.fillRect(x,y,10,30);
-    ctx.fillRect(x_1,y_1,10,10);
+    ctx.fillStyle='red';//Se indica el color que tendra el tetromino o pieza l
+    ctx.beginPath();//Se inicializa el comienzo del dibujo
+    ctx.fillRect(x,y,10,30);//Se dibuja un rectangulo, teniendo en cuenta que los dos primeros valores indican la coordenada en donde se empieza a dibujar la figura, valores antes preestablecidos en las variables x, y
+    ctx.fillRect(x_1,y_1,10,10);//Se dibuja un rectangulo, teniendo en cuenta que los dos primeros valores indican la coordenada en donde se empieza a dibujar la figura, valores antes preestablecidos en las variables x_1, y_1
+    ctx.closePath();//Se cierra el dibujo de la figura
     ctx.fill();
 }
 
 function iDraw(){
-    ctx.fillStyle='purple';
-    ctx.beginPath();
-    ctx.fillRect(x,y,10,40);
+    ctx.fillStyle='purple';//Se indica el color que tendra el tetromino o pieza i
+    ctx.beginPath();//Se inicializa el comienzo del dibujo
+    ctx.fillRect(x,y,10,40);//Se dibuja un rectangulo, teniendo en cuenta que los dos primeros valores indican la coordenada en donde se empieza a dibujar la figura, valores antes preestablecidos en las variables x, y
+    ctx.closePath();//Se cierra el dibujo de la figura
     ctx.fill();
 } 
 
 function zDraw(){
-    ctx.fillStyle='green';
-    ctx.beginPath();
-    ctx.fillRect(x,y,20,10);
-    ctx.fillRect(x_1,y_2,20,10);
+    ctx.fillStyle='green';//Se indica el color que tendra el tetromino o pieza z
+    ctx.beginPath();//Se inicializa el comienzo del dibujo
+    ctx.fillRect(x,y,20,10);//Se dibuja un rectangulo, teniendo en cuenta que los dos primeros valores indican la coordenada en donde se empieza a dibujar la figura, valores antes preestablecidos en las variables x, y
+    ctx.fillRect(x_1,y_2,20,10);//Se dibuja un rectangulo, teniendo en cuenta que los dos primeros valores indican la coordenada en donde se empieza a dibujar la figura, valores antes preestablecidos en las variables x_1, y_1
+    ctx.closePath();//Se cierra el dibujo de la figura
     ctx.fill();
 }
  
 function tDraw(){
-    ctx.fillStyle='orange';
-    ctx.beginPath();
-    ctx.fillRect(x,y,30,10);
-    ctx.fillRect(x_1,y_2,10,10);
+    ctx.fillStyle='orange';//Se indica el color que tendra el tetromino o pieza t
+    ctx.beginPath();//Se inicializa el comienzo del dibujo
+    ctx.fillRect(x,y,30,10);//Se dibuja un rectangulo, teniendo en cuenta que los dos primeros valores indican la coordenada en donde se empieza a dibujar la figura, valores antes preestablecidos en las variables x, y
+    ctx.fillRect(x_1,y_2,10,10);//Se dibuja un rectangulo, teniendo en cuenta que los dos primeros valores indican la coordenada en donde se empieza a dibujar la figura, valores antes preestablecidos en las variables x_1, y_2
+    ctx.closePath();//Se cierra el dibujo de la figura
     ctx.fill();
 }
 
 function sDraw(){
-    ctx.fillStyle='yellow';
-    ctx.beginPath();
-    ctx.fillRect(x,y_2,20,10);
-    ctx.fillRect(x_1,y,20,10);
+    ctx.fillStyle='yellow';//Se indica el color que tendra el tetromino o pieza s
+    ctx.beginPath();//Se inicializa el comienzo del dibujo
+    ctx.fillRect(x,y_2,20,10);//Se dibuja un rectangulo, teniendo en cuenta que los dos primeros valores indican la coordenada en donde se empieza a dibujar la figura, valores antes preestablecidos en las variables x, y_2
+    ctx.fillRect(x_1,y,20,10);//Se dibuja un rectangulo, teniendo en cuenta que los dos primeros valores indican la coordenada en donde se empieza a dibujar la figura, valores antes preestablecidos en las variables x_1, y
+    ctx.closePath();//Se cierra el dibujo de la figura
     ctx.fill();
 }        
 
@@ -92,13 +102,13 @@ function sDraw(){
 function square()
 {
     ctx.clearRect(0, 0, canvas.width, canvas.height); //Indicamos al canva que limpie los fotogramas "Recuerda que el movimiento generado esta dado por una serie de duplicados de la pieza que dejaran marcas de color"
-    lDraw(); //Llamamos la pieza a dibujar
+    jDraw(); //Llamamos la pieza a dibujar
     //MOVIMIENTO CON TECLAS 
     if(pressing[up])//Si se presiona la flecha para arriba
     [ctx.translate(x+15, y+25),/*Se llama a la figura donde se crea una matriz para que su punto de giro sea en el centro de la figura
     tendra punto de inicio de giro en la esquina inferior izquierda*/
     ctx.rotate(90*Math.PI/360),//La figura rotara 45 grados multiplicados por el radio del circulo y dividido en 180 grados
-    ctx.translate(-x-15, -y-25),dx=0,dy=0];//Es necesario cerrar la matriz para que la figura gire para el opuesto de su centro 
+    ctx.translate(-x-15, -y-25),dx=1,dy=0]//Es necesario cerrar la matriz para que la figura gire para el opuesto de su centro 
     if(pressing[right]) //Si se presiona la flecha para la derecha
     [x+=10, x_1+=10]; //La figura se movera hacia la derecha con espacios de 10
     if(pressing[down]) //Si se presiona la flecha para abajo
@@ -129,6 +139,7 @@ document.addEventListener('keyup',function(evt){ // Estamos indicando que escuch
     pressing[evt.keyCode]=false;
 },false);
 setInterval(square, 60);//setInterval es una función que nos permite llamar otra función y ejecutarla cada ciertos milisegundos, es directamente proporcional a nuestra variable dy
+
 
 
 
